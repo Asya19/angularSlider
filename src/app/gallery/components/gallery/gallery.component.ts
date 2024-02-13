@@ -18,7 +18,9 @@ export class GalleryComponent {
 
   currentIndex: number = 0;
 
-
+  goToSlide(slideIndex: number): void {
+    this.currentIndex = slideIndex;
+  }
 
   goToNext(): void {
     const IS_LAST_SLIDE: boolean = this.currentIndex === this.slides.length - 1;
