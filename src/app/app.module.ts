@@ -3,16 +3,19 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GalleryComponent } from './components/gallery/gallery.component';
+import { GalleryModule } from './gallery/gallery.modele';
+// import { GalleryComponent } from './gallery/components/gallery/gallery.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GalleryComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GalleryModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()
