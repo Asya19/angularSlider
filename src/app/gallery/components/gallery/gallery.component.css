@@ -9,7 +9,7 @@
 .rightArrow {
   position: absolute;
   top: 50%;
-  transform: translate(0, -50%);
+  transform: translate(0, -120%);
   right: 32px;
   font-size: 45px;
   color: #fff;
@@ -20,7 +20,7 @@
 .leftArrow {
   position: absolute;
   top: 50%;
-  transform: translate(0, -50%);
+  transform: translate(0, -120%);
   left: 32px;
   font-size: 45px;
   color: #fff;
@@ -28,9 +28,38 @@
   cursor: pointer;
 }
 
+.rightArrowCarousel {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 32px;
+  font-size: 30px;
+  color: #fff;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.leftArrowCarousel {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 32px;
+  font-size: 30px;
+  color: #fff;
+  z-index: 1;
+  cursor: pointer;
+}
+
 .slider {
+  /* position: relative;
+  height: 100%; */
+
   position: relative;
-  height: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
 }
 
 .dotsContainer {
@@ -43,3 +72,133 @@
   cursor: pointer;
   font-size: 20px;
 }
+
+/* .wrap {
+  width: 1000px;
+  overflow: hidden;
+} */
+
+.img-container {
+  overflow: hidden;
+  /* position: relative;
+  display: flex; */
+  width: 500px;
+
+  /* width: 150px; */
+  /* height: 500px; */
+}
+
+.container-all-img {
+  width: 100%;
+  display: flex;
+  position: relative;
+  left: 0%;
+  height: 100%;
+  /* display: flex;
+  position: relative;
+  width: 2880px;
+  margin: 0 auto; */
+}
+
+.img-container img {
+  width: 121px;
+  height: 100%;
+}
+
+.img-prev {
+  display: flex;
+  flex-direction: row;
+  width: 1000px;
+  /* margin-top: 10px; */
+}
+
+.img-slide {
+  display: inline-block;
+  /* width: 24%; */
+  margin: 0 auto;
+  cursor: pointer;
+  margin: 5px 2px;
+}
+
+.ih-carousel-container {
+  position: relative;
+  width: 515px;
+  left: -15px;
+}
+
+.ih-carousel-container .leftArrowCarousel {
+  left: 0;
+}
+
+.ih-carousel-container .rightArrowCarousel {
+  right: 0;
+}
+
+.ih-carousel-container .rightArrowCarousel,
+.ih-carousel-container .leftArrowCarousel {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  top: 5%;
+  transform: translateY(25%);
+  font-size: 50px;
+  border-radius: 50%;
+  text-align: center;
+  text-align: right;
+  transition: ease-in-out .2s;
+}
+
+.ih-carousel-container .rightArrowCarousel.d-none,
+.ih-carousel-container .leftArrowCarousel.d-none {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  top: 5%;
+  transform: translateY(25%);
+  font-size: 50px;
+  border-radius: 50%;
+  text-align: center;
+  text-align: right;
+  transition: ease-in-out .2s;
+}
+
+/* .ih-carousel-container .rightArrowCarousel,
+.ih-carousel-container .leftArrowCarousel {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  top: 5%;
+  transform: translateY(25%);
+  font-size: 50px;
+  border-radius: 50%;
+  text-align: right;
+  transition: ease-in-out .2s;
+} */
+
+.ih-carousel-inner {
+  position: relative;
+  display: flex;
+  /* width: 100%; */
+  overflow: hidden;
+  /* margin-top: 1%; */
+  height: 120px;
+}
+
+.ih-carousel-inner .ih-carousel-item {
+  width: 120px;
+  height: 120px;
+  /* border: 2px solid #A2CACC; */
+  display: inline-flex;
+  background: white;
+  margin: auto;
+  margin-right: 15px;
+  margin-left: 15px;
+  cursor: pointer;
+  background: white;
+}
+
+img, svg {
+  vertical-align: middle;
+  height: 120px;
+}
+
