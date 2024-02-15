@@ -9,31 +9,31 @@
 
 
   <div (window:resize)="onResize()" id="ih-carousel-container" class="img-container ih-carousel-container slide-in-top">
-    <span id="ih-carousel-prev-btn" (click)="onCarouselArrowClick('left')" class="leftArrowCarousel ih-carousel-prev-btn">
+    <!-- <span id="ih-carousel-prev-btn" (click)="onCarouselArrowClick('left')" class="leftArrowCarousel ih-carousel-prev-btn">
       ❰
-    </span>
-    <span id="ih-carousel-next-btn" (click)="onCarouselArrowClick('right')" class="rightArrowCarousel ih-carousel-next-btn">
+    </span> -->
+    <!-- <span id="ih-carousel-next-btn" (click)="onCarouselArrowClick('right')" class="rightArrowCarousel ih-carousel-next-btn">
       ❱
-    </span>
-    <div #ihCarouselInner class="ih-carousel-inner">
-      <div>
-        <!-- <div  *ngFor="let item of numberOfItems(8); let i=index;"> -->
-        <!-- <div  (swipe)="onSwipe($event)"  class="ih-carousel-item"> -->
-          <div class="ih-carousel-item">
+    </span> -->
 
-          <div *ngFor="let slide of slides;  let slideIndex = index" class="img-slide">
-            <img  (click)="goToSlide(slideIndex)" class="content-3" src="{{slide.url}}" alt="" appDemo>
-          </div>
-          <!-- <div container="body" class="circle-content-cntnr text-center">
-            <div class="content-3" style="font-size:26px;">{{i + 1}}</div>
-          </div> -->
+    <div id="ih-carousel-prev-btn" class="rightArrowCarousel" (click)="onCarouselArrowClick('left')" >❱</div>
+    <div #ihCarouselInner class="container-all-img ih-carousel-inner">
+      <!-- <div  *ngFor="let item of numberOfItems(8); let i=index;"> -->
+      <!-- <div  (swipe)="onSwipe($event)"  class="ih-carousel-item"> -->
+        <div class="ih-carousel-item">
 
-
+          <!-- <span id="ih-carousel-prev-btn" (click)="onCarouselArrowClick('left')" class="leftArrowCarousel ih-carousel-prev-btn">
+            ❰
+          </span> -->
+        <div *ngFor="let slide of slides;  let slideIndex = index" class="img-slide">
+          <img  (click)="goToSlide(slideIndex)" class="content-3" src="{{slide.url}}" alt="" appDemo>
         </div>
+        <!-- <span id="ih-carousel-next-btn" (click)="onCarouselArrowClick('right')" class="rightArrowCarousel ih-carousel-next-btn">
+          ❱
+        </span> -->
       </div>
-
-
     </div>
+    <div id="ih-carousel-next-btn" class="leftArrowCarousel d-none" (click)="onCarouselArrowClick('right')">❰</div>
 
 
 

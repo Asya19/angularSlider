@@ -1,7 +1,8 @@
-import { Component, Input, OnInit, ViewChild, ElementRef  } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ElementRef, Inject } from '@angular/core';
 import { SliderInterface } from '../../types/slide.interface';
 // import { SliderInterface } from 'src/app/gallery/types/slide.interface';
 
+/** @dynamic */
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
@@ -17,8 +18,10 @@ import { SliderInterface } from '../../types/slide.interface';
 export class GalleryComponent implements OnInit {
 
   @ViewChild('ihCarouselInner') ihCarouselInner: ElementRef;
+  @Inject('DOCUMENT') document: Document;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {}
   ngAfterViewInit() {
@@ -51,9 +54,12 @@ export class GalleryComponent implements OnInit {
 
   onCarouselArrowClick(direction: any) {
     let carouselOffsetWidth = this.ihCarouselInner.nativeElement.offsetWidth;
+    console.log(`carouselOffsetWidth = ${carouselOffsetWidth}`);
     let carouselItemWIdth = document.querySelector('.ih-carousel-item')?.clientWidth;
+    console.log(`carouselItemWIdth = ${carouselOffsetWidth}`);
 
-    let carouselScrollWidth = this.ihCarouselInner.nativeElement.scrollWidth;
+    // let carouselScrollWidth = this.ihCarouselInner.nativeElement.scrollWidth;
+
     if (direction == 'left')
       this.ihCarouselInner.nativeElement.scrollTo({
         left:
@@ -67,7 +73,10 @@ export class GalleryComponent implements OnInit {
           this.ihCarouselInner.nativeElement.scrollLeft +
           carouselOffsetWidth - carouselItemWIdth!,
         behavior: 'smooth'
-      });
+      })
+      console.log(`this.ihCarouselInner.nativeElement.scrollLeft = ${this.ihCarouselInner.nativeElement.scrollLeft}`);
+      console.log(`carouselOffsetWidth = ${carouselOffsetWidth}`);
+      console.log(`carouselItemWIdth = ${carouselItemWIdth!}`);
 
     setTimeout(() => {
       this.toggleCarouselBtns();
@@ -78,6 +87,9 @@ export class GalleryComponent implements OnInit {
     let carouselScrollWidth = this.ihCarouselInner.nativeElement.scrollWidth;
     let carouselOffsetWidth = this.ihCarouselInner.nativeElement.offsetWidth;
     let scrollLeft = this.ihCarouselInner.nativeElement.scrollLeft;
+    // let scrollLeft = 121;
+
+    console.log(`scrollLeft = ${scrollLeft}`);
 
     let carouselPrevBtn: HTMLElement = document.getElementById('leftArrowCarousel')!;
     let carouselNextBtn: HTMLElement = document.getElementById('rightArrowCarousel')!;
