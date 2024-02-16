@@ -6,74 +6,20 @@
 
   <div class="slide" [ngStyle]="{'background-image': getCurrentSlideUrl()}"></div>
 
-
-
-  <div (window:resize)="onResize()" id="ih-carousel-container" class="img-container ih-carousel-container slide-in-top">
-    <!-- <span id="ih-carousel-prev-btn" (click)="onCarouselArrowClick('left')" class="leftArrowCarousel ih-carousel-prev-btn">
-      ❰
-    </span> -->
-    <!-- <span id="ih-carousel-next-btn" (click)="onCarouselArrowClick('right')" class="rightArrowCarousel ih-carousel-next-btn">
-      ❱
-    </span> -->
-
-    <div id="ih-carousel-prev-btn" class="rightArrowCarousel" (click)="onCarouselArrowClick('left')" >❱</div>
-    <div #ihCarouselInner class="container-all-img ih-carousel-inner">
-      <!-- <div  *ngFor="let item of numberOfItems(8); let i=index;"> -->
-      <!-- <div  (swipe)="onSwipe($event)"  class="ih-carousel-item"> -->
-        <div class="ih-carousel-item">
-
-          <!-- <span id="ih-carousel-prev-btn" (click)="onCarouselArrowClick('left')" class="leftArrowCarousel ih-carousel-prev-btn">
-            ❰
-          </span> -->
-        <div *ngFor="let slide of slides;  let slideIndex = index" class="img-slide">
-          <img  (click)="goToSlide(slideIndex)" class="content-3" src="{{slide.url}}" alt="" appDemo>
+  <div (window:resize)="onResize()" id="carousel-container" class="img-container carousel-container slide-in-top">
+    <div id="carousel-prev-btn" class="rightArrowCarousel" (click)="onCarouselArrowClick('left')" >❱</div>
+    <div #containerAllImg class="container-all-img carousel-inner">
+        <div class="carousel-item">
+        <div *ngFor="let slide of imgData; let slideIndex = index" class="img-slide">
+          <img (click)="goToSlide(slideIndex)" class="content-3" src="{{slide.url}}" alt="" appDemo>
         </div>
-        <!-- <span id="ih-carousel-next-btn" (click)="onCarouselArrowClick('right')" class="rightArrowCarousel ih-carousel-next-btn">
-          ❱
-        </span> -->
       </div>
     </div>
-    <div id="ih-carousel-next-btn" class="leftArrowCarousel d-none" (click)="onCarouselArrowClick('right')">❰</div>
+    <div id="carousel-next-btn" class="leftArrowCarousel" (click)="onCarouselArrowClick('right')">❰</div>
 
 
 
   </div>
-
-  <!-- <div class="img-container">
-
-    <div class="leftArrowCarousel" (click)="goToPreviousCarousel()" >❰</div>
-    <div id="rightArrowCarousel" class="rightArrowCarousel" (click)="goToNextCarousel()">❱</div>
-
-    <div id="container-all-img" class="container-all-img">
-
-      <div class="img-prev text-centre" > -->
-
-        <!-- <div class="leftArrowCarousel" (click)="goToPreviousCarousel()" >❰</div> -->
-        <!-- <div *ngFor="let slide of slides;"  class="img-slide">
-          <img src="{{slide.url}}" alt="" appDemo>
-        </div> -->
-        <!-- <div id="rightArrowCarousel" class="rightArrowCarousel" (click)="goToNextCarousel()">❱</div> -->
-
-
-        <!-- <div class="img-slide active">
-          <img src="/assets/images/png/img-1.jpg" alt="" appDemo>
-        </div>
-        <div class="img-slide">
-          <img src="/assets/images/png/img-2.jpg" alt="" appDemo>
-        </div>
-        <div class="img-slide">
-          <img src="/assets/images/png/img-3.jpg" alt="" appDemo>
-        </div>
-        <div class="img-slide">
-          <img src="/assets/images/png/img-4.jpg" alt="" appDemo>
-        </div>
-        <div class="img-slide">
-          <img src="/assets/images/png/img-5.jpg" alt="" appDemo>
-        </div>
-      </div> -->
-
-    <!-- </div>
-  </div> -->
 
   <!-- <div class="dotsContainer">
     <div *ngFor="let slide of slides; let slideIndex = index" class="dot"
@@ -83,3 +29,4 @@
   </div> -->
 
 </div>
+

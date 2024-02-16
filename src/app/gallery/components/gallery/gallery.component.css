@@ -73,6 +73,7 @@
   position: relative;
   overflow: hidden;
   width: 600px;
+  height: 190px;
   margin: 0 auto;
 }
 
@@ -119,11 +120,11 @@
   display: none;
 }
 
-.ih-carousel-inner {
+.carousel-inner {
   overflow: hidden;
 }
 
-.ih-carousel-inner .ih-carousel-item {
+.carousel-inner .carousel-item {
   width: 1200px;
   display: inline-flex;
 }
