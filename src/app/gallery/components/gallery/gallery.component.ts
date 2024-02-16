@@ -17,6 +17,8 @@ export class GalleryComponent implements OnInit {
 
   imgData: SliderInterface[] = [];
 
+  // https://my-json-server.typicode.com/asya19/database/images
+
   constructor(private dataService: DataService) {
     this.dataService.getJsonData().subscribe((res: any) => {
       // alert(JSON.stringify(res));
@@ -24,6 +26,14 @@ export class GalleryComponent implements OnInit {
       // console.log(this.imgData);
     });
   }
+
+  // constructor(private dataService: DataService) {
+  //   this.dataService.getJsonData().subscribe((res: any) => {
+  //     // alert(JSON.stringify(res));
+  //     this.imgData = res;
+  //     // console.log(this.imgData);
+  //   });
+  // }
 
 
   ngOnInit(): void {}

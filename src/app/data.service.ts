@@ -8,8 +8,10 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
+   // https://my-json-server.typicode.com/asya19/database/images
+
   getJsonData() {
-    return this.http.get('db.json');
+    return this.http.get('https://my-json-server.typicode.com/asya19/database/images');
   }
 
 }
