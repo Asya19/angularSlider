@@ -9,7 +9,7 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getJsonData() {
-    return this.http.get('assets/data.json');
+    return this.http.get('db.json');
   }
 
 }
