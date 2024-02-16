@@ -6,7 +6,7 @@
 
   <div class="slide" [ngStyle]="{'background-image': getCurrentSlideUrl()}"></div>
 
-  <div (window:resize)="onResize()" id="carousel-container" class="img-container carousel-container slide-in-top">
+  <div id="carousel-container" class="img-container carousel-container slide-in-top">
     <div id="carousel-prev-btn" class="rightArrowCarousel" (click)="onCarouselArrowClick('left')" >❱</div>
     <div #containerAllImg class="container-all-img carousel-inner">
         <div class="carousel-item">

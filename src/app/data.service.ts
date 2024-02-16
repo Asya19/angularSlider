@@ -6,12 +6,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  constructor(private http: HttpClient) { }
+  // constructor(private http: HttpClient) { }
+  constructor() { }
 
    // https://my-json-server.typicode.com/asya19/database/images
 
-  getJsonData() {
-    return this.http.get('https://my-json-server.typicode.com/asya19/database/images');
-  }
+  // getJsonData() {
+  //   // return this.http.get('db.json');
+  //   return this.http.get('https://my-json-server.typicode.com/asya19/database/images');
+  // }
 
 }

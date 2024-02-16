@@ -10,20 +10,24 @@ import { DataService } from '../../../data.service';
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.css'
 })
+
 export class GalleryComponent implements OnInit {
 
   @ViewChild('containerAllImg') containerAllImg: ElementRef;
   @Inject('DOCUMENT') document: Document;
 
+
+
   imgData: SliderInterface[] = [];
+  // constructor(private http: HttpClient) { }
 
   // https://my-json-server.typicode.com/asya19/database/images
 
-  constructor(private dataService: DataService) {
-    this.dataService.getJsonData().subscribe((res: any) => {
+  constructor(private http: HttpClient) {
+    this.http.get('https://my-json-server.typicode.com/asya19/database/images').subscribe((res: any) => {
       // alert(JSON.stringify(res));
-      this.imgData = res;
-      // console.log(this.imgData);
+      this.imgData = res as SliderInterface[];
+      // console.log(this.imgData.values);
     });
   }
 
