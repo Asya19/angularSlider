@@ -21,7 +21,7 @@ export class GalleryComponent implements OnInit {
     this.dataService.getJsonData().subscribe((res: any) => {
       // alert(JSON.stringify(res));
       this.imgData = res;
-      console.log(this.imgData);
+      // console.log(this.imgData);
     });
   }
 
